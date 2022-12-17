@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "couriers",
+  "info": {
+    "singularName": "courier",
+    "pluralName": "couriers",
+    "displayName": "Courier",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "description": {
+      "type": "text"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "courier"
+    },
+    "order": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::order.order",
+      "inversedBy": "courier"
+    }
+  }
+}
